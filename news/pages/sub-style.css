@@ -1,0 +1,103 @@
+/* A. Auto Increment Table (CSS Only)*/
+
+.auto-number {
+  counter-reset: rowNumber -1;
+  /* -1 untuk penyesuaian dengan table, agar dimulai dari 1 */
+  /* penamaan tidak harus rowNumber, bebas saja, sesuaikan */
+}
+
+.auto-number tr {
+  counter-increment: rowNumber;
+}
+
+.auto-number tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+/* B. DataTable Sort Icon to Left */
+
+table.dataTable>thead .sorting:before,
+table.dataTable>thead .sorting_asc:before,
+table.dataTable>thead .sorting_desc:before,
+table.dataTable>thead .sorting_asc_disabled:before,
+table.dataTable>thead .sorting_desc_disabled:before {
+  /* Original */
+  right: 1em;
+  content: "↑";
+
+  /* Modified */
+  /* left: 3.2em; */
+  /* content: "↿"; */
+
+  /* Modified: Hidden */
+  /* content: ""; */
+}
+
+table.dataTable>thead .sorting:after,
+table.dataTable>thead .sorting_asc:after,
+table.dataTable>thead .sorting_desc:after,
+table.dataTable>thead .sorting_asc_disabled:after,
+table.dataTable>thead .sorting_desc_disabled:after {
+  /* Original */
+  right: .5em;
+  content: "↓";
+
+  /* Modified */
+  /* left: 3.5em; */
+  /* content: "⇂"; */
+
+  /* Modified: Hidden */
+  /* content: ""; */
+}
+
+/* C. Icon After Text */
+
+.uk::after {
+  content: "";
+  display: inline-block;
+  background-image: url(../assets/flag-uk.svg);
+  background-size: 32px 16px;
+  width: 32px;
+  height: 16px;
+  margin-left: 2px;
+}
+
+.indo::after {
+  content: "";
+  display: inline-block;
+  background-image: url(../assets/flag-id.svg);
+  background-size: 32px 16px;
+  width: 32px;
+  height: 16px;
+  margin-left: 2px;
+}
+
+.incomplete {
+  border-bottom: 2px solid #ffccbc;
+}
+
+/* D. Lainnya */
+
+.new-bg {
+  background-color: lightgreen;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 3px;
+  border-radius: 8px;
+}
+
+.sim-bg {
+  background-color: lightblue;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-bottom: 3px;
+  border-radius: 8px;
+}
+
+/* E. Anchor Decoration: None */
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,10 @@
+black-1: https://www.pexels.com/photo/city-lit-up-at-night-316902/
+black-2: https://www.pexels.com/photo/monochrome-photo-of-water-droplets-on-leaf-1158394/
+bokeh-1: https://www.pexels.com/photo/purple-and-red-light-bokeh-6404129/
+bokeh-2: https://www.pexels.com/photo/yellow-bokeh-lights-1813392/
+light-1: https://www.pexels.com/photo/shadow-of-home-plant-on-wall-4207776/
+light-2: https://www.pexels.com/photo/white-wall-1291281/
+modern-1: https://unsplash.com/photos/qNAgTdop3E0
+modern-2: https://www.pexels.com/photo/gray-and-white-wallpaper-1103970/
+white-1: https://www.pexels.com/photo/white-grass-field-2395253/
+white-2: https://www.pexels.com/photo/typical-american-city-downtown-in-black-and-white-2255/

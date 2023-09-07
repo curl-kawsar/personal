@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATOZ Mind: User Experience (UX)</title>
+  <link rel="icon" href="../assets/logo-atoz-mind.svg">
+  <link rel="stylesheet" href="../library/fonts-google-apis.css">
+  <link rel="stylesheet" href="../library/quasar-2.7.1.min.css">
+  <style>
+    .mtitle {
+      margin: 12px 0px 24px 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="q-app" style="min-height: 100vh;">
+    <q-splitter v-model="splitterModel" style="height: 100vh">
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                          SPLITTER: BAGIAN KIRI                          -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:before>
+        <div class="q-pa-md">
+
+          <!-- A. FILTER -->
+          <q-input ref="filterRef" filled v-model="filter" label="Search here" class="q-mb-md">
+            <template v-slot:append>
+              <q-icon v-if="filter !== ''" name="clear" class="cursor-pointer" @click="resetFilter"></q-icon>
+            </template>
+          </q-input>
+
+          <!-- B. ALERT -->
+          <q-banner inline-actions rounded class="bg-primary text-white">
+            Resource: <a href="https://grow.google/certificates/ux-design/" style="color: white;">Google UX Design Professional
+              Certificate</a>
+          </q-banner>
+
+          <!-- C. BUTTON -->
+          <div class="q-gutter-sm q-mt-sm q-mb-md">
+            <q-btn outline color="primary" label="Expand All" icon-right="open_in_full" @click="$refs.tree.expandAll()"></q-btn>
+            <q-btn outline color="primary" label="Collapse All" icon-right="close_fullscreen" @click="$refs.tree.collapseAll()">
+            </q-btn>
+            <q-btn outline color="primary" label="Reset" icon-right="refresh" @click="defaultNode($refs)"></q-btn>
+            <!-- <q-btn outline color="primary" label="Toggle" icon-right="toggle_on" @click="toggleNode($refs)"></q-btn> -->
+            <q-btn outline color="primary" label="Home" icon-right="home" href="../index.html"></q-btn>
+          </div>
+
+          <!-- D. CONTENT -->
+          <q-tree :nodes="simple" node-key="label" ref="tree" selected-color="green" v-model:selected="selected"
+            v-model:expanded="expanded" :filter="filter" dense :default-expand-all="false"></q-tree> <!-- 🔴 GANTI JADI FALSE 🔴 -->
+        </div>
+      </template>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                     SPLITTER: PEMBATAS (DRAGGABLE)                      -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:separator>
+        <q-avatar color="primary" text-color="white" size="40px" icon="drag_indicator"></q-avatar>
+      </template>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                         SPLITTER: BAGIAN KANAN                          -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:after>
+
+        <!-- ----------------------------------------------------------------------- -->
+        <!--                              ANCHOR CONTENT 1                           -->
+        <!-- ----------------------------------------------------------------------- -->
+
+        <q-tab-panels v-model="selected" animated transition-prev="jump-up" transition-next="jump-up">
+
+          <!-- DETAIL -->
+          <q-tab-panel name="User Experience (UX) design">
+            <q-layout container style="height: 95vh">
+
+              <div class="q-px-sm q-pb-sm">
+                <h4 class="mtitle">User Experience (UX) design</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <q-img src="../assets/example.png">
+              </div>
+
+              <q-page-scroller position="bottom-right" :scroll-offset="0" :offset="[18, 18]">
+                <q-btn fab icon="keyboard_arrow_up" color="primary"></q-btn>
+              </q-page-scroller>
+
+            </q-layout>
+          </q-tab-panel>
+
+        </q-tab-panels>
+      </template>
+    </q-splitter>
+  </div>
+
+  <script src="../library/vue-3.global.prod.js"></script>
+  <script src="../library/quasar-2.7.1.umd.prod.js"></script>
+  <script src="../script/ux.js"></script>
+</body>
+
+</html>

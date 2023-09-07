@@ -1,0 +1,60 @@
+<body>
+  <!-- TABS | YOUTUBE -->
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-pills nav-fill mt-3" id="pills-tab-youtube" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-1-tab-youtube" data-bs-target="#pills-1-youtube" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-1-youtube" aria-selected="false">
+            <i class="bi bi-trophy"></i> Top 10
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-2-tab-youtube" data-bs-target="#pills-2-youtube" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-2-youtube" aria-selected="true">
+            <i class="bi bi-tags"></i> All Channel
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ALERT | SOFTWARE -->
+  <div class="mt-4"></div>
+
+  <div class="text-center alert alert-warning" role="alert">
+    <b>🚧 On Progress Now 🚧</b>
+    <br>
+    <b>Latest: lihat subscription-nya raihanralam@gmail.com</b>
+    <br>
+    <b>Next: Selesaikan GDrive ➜ Alamehan Website ➜ Next Task ➜ Youtube</b>
+  </div>
+
+  <!-- CONTENT | YOUTUBE -->
+  <div class="row">
+    <div class="col">
+      <div class="tab-content" id="pills-tabContent">
+        <!-- TAB 1 -->
+        <div class="tab-pane fade show active" id="pills-1-youtube" role="tabpanel" aria-labelledby="pills-1-tab-youtube">
+          <div id="tab1-youtube"></div>
+        </div>
+        <!-- TAB 2 -->
+        <div class="tab-pane fade" id="pills-2-youtube" role="tabpanel" aria-labelledby="pills-2-tab-youtube">
+          <div id="tab2-youtube"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../library/js/jquery-3.6.0.min.js"></script>
+
+  <script>
+    // Load tab1-youtube.html
+    $(function () {
+      $("#tab1-youtube").load("./pages/sub-youtube/tab1-youtube.html");
+    });
+
+    // Load tab2-youtube.html
+    $(function () {
+      $("#tab2-youtube").load("./pages/sub-youtube/tab2-youtube.html");
+    });
+  </script>
+</body>

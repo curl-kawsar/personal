@@ -1,0 +1,49 @@
+<body>
+	<!-- TABS | COURSE -->
+	<div class="row">
+		<div class="col">
+			<ul class="nav nav-pills nav-fill mt-3" id="pills-tab-course" role="tablist">
+				<li class="nav-item" role="presentation">
+					<button class="nav-link active" id="pills-1-tab-course" data-bs-target="#pills-1-course" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-1-course" aria-selected="false">
+						<i class="bi bi-card-checklist"></i> All Top Courses
+					</button>
+				</li>
+				<li class="nav-item" role="presentation">
+					<button class="nav-link" id="pills-2-tab-course" data-bs-target="#pills-2-course" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-2-course" aria-selected="true">
+						<i class="bi bi-award"></i> Coursera Specializations
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- CONTENT | COURSE -->
+	<div class="row">
+		<div class="col">
+			<div class="tab-content" id="pills-tabContent">
+				<!-- TAB 1 -->
+				<div class="tab-pane fade show active" id="pills-1-course" role="tabpanel" aria-labelledby="pills-1-tab-course">
+					<div id="tab1-course"></div>
+				</div>
+				<!-- TAB 2 -->
+				<div class="tab-pane fade" id="pills-2-course" role="tabpanel" aria-labelledby="pills-2-tab-course">
+					<div id="tab2-course"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../library/js/jquery-3.6.0.min.js"></script>
+
+	<script>
+		// Load tab1-course.html
+		$(function () {
+			$("#tab1-course").load("./pages/sub-course/tab1-course.html");
+		});
+
+		// Load tab2-course.html
+		$(function () {
+			$("#tab2-course").load("./pages/sub-course/tab2-course.html");
+		});
+	</script>
+</body>

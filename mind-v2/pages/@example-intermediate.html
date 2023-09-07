@@ -1,0 +1,220 @@
+<!-- ⚠️ SUMBER: https://quasar.dev/vue-components/tree ⚠️ -->
+<!-- ⚠️ ISSUES: https://forum.quasar-framework.org/topic/7986/expanding-and-collapsing-nodes-extremely-slow/2 ⚠️ -->
+<!-- ⚠️ CATATAN: Install extension "Comment Anchor", lalu gunakan (di tab kiri VS Code) untuk navigasi cepat ke konten ⚠️ -->
+
+<!-- ⚠️ PRO TIPS: ⚠️
+
+Agar source code mudah dibaca, terlebih gunakan CTRL+SHIFT+P, lalu ketik "Fold All" / "Unfold All" / "Fold Level 7", 
+pilih sesuai kebutuhan. Atau jika ingin hide khusus isi content page, select salah satu tag "<q-tab-panel", 
+lalu CTRL+SHIFT+P, ketik "Fold All Regions Except Selected" dan enter.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Example: Intermediate</title>
+  <link rel="icon" href="../assets/logo-atoz-mind.svg">
+  <link rel="stylesheet" href="../library/fonts-google-apis.css">
+  <link rel="stylesheet" href="../library/quasar-2.7.1.min.css">
+  <style>
+    .mtitle {
+      margin: 12px 0px 24px 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="q-app" style="min-height: 100vh;">
+    <q-splitter v-model="splitterModel" style="height: 100vh">
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                          SPLITTER: BAGIAN KIRI                          -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:before>
+        <div class="q-pa-md">
+          <!-- 
+            ================
+            Padding & Margin
+            ================
+            p/m                       (padding/margin)
+            a/x/y/t/r/b/l             (all/sumbu-x/sumbu-y/top/right/bottom/left)
+            none/auto/xs/sm/md/lg/xl
+            -->
+
+          <!-- A. FILTER -->
+          <q-input ref="filterRef" filled v-model="filter" label="Search here" class="q-mb-md">
+            <template v-slot:append>
+              <q-icon v-if="filter !== ''" name="clear" class="cursor-pointer" @click="resetFilter"></q-icon>
+            </template>
+          </q-input>
+
+          <!-- B. ALERT -->
+          <q-banner inline-actions rounded class="bg-primary text-white">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          </q-banner>
+
+          <!-- C. BUTTON -->
+          <div class="q-gutter-sm q-mt-sm q-mb-md">
+            <q-btn outline color="primary" label="Expand All" icon-right="open_in_full" @click="$refs.tree.expandAll()"></q-btn>
+            <q-btn outline color="primary" label="Collapse All" icon-right="close_fullscreen" @click="$refs.tree.collapseAll()">
+            </q-btn>
+            <q-btn outline color="primary" label="Reset" icon-right="refresh" @click="defaultNode($refs)"></q-btn>
+            <q-btn outline color="primary" label="Toggle" icon-right="toggle_on" @click="toggleNode($refs)"></q-btn>
+            <q-btn outline color="primary" label="Home" icon-right="home" href="../index.html"></q-btn>
+          </div>
+
+          <!-- D. CONTENT -->
+          <q-tree :nodes="simple" node-key="label" ref="tree" selected-color="green" v-model:selected="selected"
+            v-model:expanded="expanded" :filter="filter" dense :default-expand-all="false"></q-tree>
+
+          <!-- 
+            ==============
+            Daftar Atribut
+            ==============
+            dense               : mode padat
+            dark                : mode gelap (jangan lupa gunakan dark background secara manual)
+            accordion           : mode akordion (sibling nodes tertutup saat yang lain terbuka)
+            no-connectors       : tanpa garis konektor
+            default-expand-all  : buka seluruh nodes secara default
+            -->
+        </div>
+      </template>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                     SPLITTER: PEMBATAS (DRAGGABLE)                      -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:separator>
+        <q-avatar color="primary" text-color="white" size="40px" icon="drag_indicator"></q-avatar>
+      </template>
+
+      <!-- ----------------------------------------------------------------------- -->
+      <!--                         SPLITTER: BAGIAN KANAN                          -->
+      <!-- ----------------------------------------------------------------------- -->
+
+      <template v-slot:after>
+        <q-tab-panels v-model="selected" animated transition-prev="jump-up" transition-next="jump-up">
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                          ANCHOR CONTENT "Root"                          -->
+          <!-- ----------------------------------------------------------------------- -->
+
+          <q-tab-panel name="Root">
+            <q-layout container style="height: 95vh">
+
+              <!-- BASIC TEXT -->
+              <div class="q-px-sm q-pb-sm">
+                <h4 class="mtitle">Root</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <q-img src="../assets/example.png"></q-img>
+              </div>
+              <!-- TIMELINE -->
+              <div class="q-px-sm q-pb-sm">
+                <q-timeline color="secondary">
+                  <!-- <q-timeline-entry heading>
+                    Root
+                  </q-timeline-entry> -->
+                  <h4 class="mtitle">Root</h4>
+
+                  <q-timeline-entry title="Event Title" subtitle="February 22, 1986">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                      dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                      commodo
+                      consequat.
+                    </div>
+                  </q-timeline-entry>
+
+                  <q-timeline-entry title="Event Title" subtitle="February 21, 1986" icon="delete">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                      dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                      commodo
+                      consequat.
+                    </div>
+                  </q-timeline-entry>
+                </q-timeline>
+              </div>
+
+              <q-page-scroller position="bottom-right" :scroll-offset="0" :offset="[18, 18]">
+                <q-btn fab icon="keyboard_arrow_up" color="primary"></q-btn>
+              </q-page-scroller>
+
+            </q-layout>
+          </q-tab-panel>
+
+          <!-- ----------------------------------------------------------------------- -->
+          <!--                     ANCHOR CONTENT "Pleasing decor"                     -->
+          <!-- ----------------------------------------------------------------------- -->
+
+          <q-tab-panel name="Pleasing decor">
+            <q-layout container style="height: 95vh">
+
+              <!-- BASIC TEXT -->
+              <div class="q-px-sm q-pb-sm">
+                <h4 class="mtitle">Pleasing decor</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis praesentium cumque magnam odio iure quidem, quod
+                  illum numquam possimus obcaecati commodi minima assumenda consectetur culpa fuga nulla ullam. In, libero.</p>
+                <q-img src="../assets/example.png"></q-img>
+              </div>
+              <!-- TIMELINE -->
+              <div class="q-px-sm q-pb-sm">
+                <q-timeline color="secondary">
+                  <!-- <q-timeline-entry heading>
+                    Pleasing decor
+                  </q-timeline-entry> -->
+                  <h4 class="mtitle">Pleasing decor</h4>
+
+                  <q-timeline-entry title="Event Title" subtitle="February 22, 1986">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                      dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                      commodo
+                      consequat.
+                    </div>
+                  </q-timeline-entry>
+
+                  <q-timeline-entry title="Event Title" subtitle="February 21, 1986" icon="delete">
+                    <div>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                      dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                      commodo
+                      consequat.
+                    </div>
+                  </q-timeline-entry>
+                </q-timeline>
+              </div>
+
+              <q-page-scroller position="bottom-right" :scroll-offset="0" :offset="[18, 18]">
+                <q-btn fab icon="keyboard_arrow_up" color="primary"></q-btn>
+              </q-page-scroller>
+
+            </q-layout>
+          </q-tab-panel>
+
+        </q-tab-panels>
+      </template>
+    </q-splitter>
+  </div>
+
+  <script src="../library/vue-3.global.prod.js"></script>
+  <script src="../library/quasar-2.7.1.umd.prod.js"></script>
+  <script src="../script/@example-intermediate.js"></script>
+</body>
+
+</html>

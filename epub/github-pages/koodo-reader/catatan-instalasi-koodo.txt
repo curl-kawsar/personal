@@ -1,0 +1,52 @@
+================================
+Catatan Instalasi Koodo Reader :
+================================
+---------------------------------------------------
+A. Download dan install Git, Node JS & Yarn terbaru
+---------------------------------------------------
+
+https://git-scm.com/
+https://nodejs.org/en/
+https://classic.yarnpkg.com/en/docs/install/
+
+------------------------
+B. Clone & Build Project
+------------------------
+
+$ git clone https://github.com/troyeguo/koodo-reader.git
+$ cd koodo-reader-master
+$ yarn				(Instalasi Package)
+$ yarn start			(Run Project)
+$ yarn build			(Compile Project)
+
+-----------------------------------------
+C. Modifikasi Bahasa Menjadi Full English
+-----------------------------------------
+
+1) Buka file "\koodo-reader-master\build\static\js\main.cd00813c.chunk.js"
+
+2) Modifikasi bagian berpola
+   Bookmark":"\u66f8\u7c64"   ➜   Bookmark":"Bookmark"
+
+3) \u66f8\u7c64 adalah Chinese Unicode, coba saja convert menjadi text di link:
+   https://www.chineseconverter.com/en/convert/unicode
+
+4) Perhatikan pada bagian-bagian seperti berikut
+   JSON.parse('{"Download Demo Book":"\u4e0b\u8f09\u7bc4\u4f8b\u5716\u66f8" ...')}
+   
+5) Lakukan Copy hanya pada data JSONnya saja yaitu
+   {"Download Demo Book":"\u4e0b\u8f09\u7bc4\u4f8b\u5716\u66f8" ...
+
+6) Paste di http://jsonviewer.stack.hu/, lalu format data JSON agar lebih mudah
+   dibaca, lalu modifikasi seperti yang dilakukan di point 2
+
+7) Setelah selesai modifikasi format kembali data JSON ke bentuk "JavaScript escaped"
+   dengan cara Copy semua hasil modifikasi tadi dan paste di 
+   https://www.freeformatter.com/json-formatter.html, lalu pada menu "Indentation level"
+   pilih "JavaScript escaped", lalu klik "FORMAT JSON"
+
+8) Copy dan Paste (timpa) hasil format ke dalam source code "main.cd00813c.chunk.js" tadi
+
+9) Selesai, pokoknya cari pola \u4e0b\u8f09\ ... dan timpa dengan bahasa Inggris, gunakan
+   https://www.chineseconverter.com/en/convert/unicode untuk convert pola ke text, lalu
+   https://translate.google.com/ untuk translate text kedalam bahasa inggris (lainnya)

@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>NiceList by Kawsar</title>
+  <link href="../assets/favicon.ico" rel="icon">
+  <link href="library/css/bootstrap-5.0.2.min.css" rel="stylesheet">
+  <link href="library/css/bootstrap-icons.css" rel="stylesheet">
+  <link href="library/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+  <link href="pages/btn-style.css" rel="stylesheet">
+  
+  <style>
+  
+    .list-group-item {
+      padding: 0.1rem 1.5rem;
+    }
+
+    .nav-pills .nav-item .nav-link {
+      background-color: #f4f5f6 !important;
+      color: #adb5bd;
+    }
+
+    .nav-pills .nav-item .nav-link.active {
+      background-color: #0d6efd !important;
+      color: white !important;
+    }
+
+    /* B. Button to Top */
+    .btn-scroll {
+      z-index: 1000;
+
+      /* Perfect Fixed Center Position */
+      position: fixed;
+      bottom: 15%;
+      right: -16px;
+      /* Wajib Tambahkan Transform */
+      /* transform: translate(-50%, 0%); */
+      border: 0px solid;
+      padding: 0px;
+      background-color: transparent;
+      transition: 0.3s;
+    }
+
+    /* Hover saat buka di computer Active (click) saat buka di mobile */
+    .btn-scroll:hover,
+    .btn-scroll:active {
+      right: 0px;
+    }
+
+    .btn-scroll:hover .ganti-warna,
+    .btn-scroll:active .ganti-warna {
+      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(175deg) brightness(97%) contrast(103%);
+    }
+
+    /* ------------------------------- RESPONSIVE ------------------------------- */
+
+    @media (max-width: 771px) {
+      .btn-scroll {
+        right: 0px;
+        opacity: 75%;
+        zoom: 75%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BUTTON TO TOP -->
+  <button class="btn-scroll">
+    <a href="#atas"><img src="assets/to-top.svg" class="ganti-warna"></a>
+  </button>
+
+  <!-- NAVBAR -->
+  <nav class="navbar fixed-top navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand f w-bolder" href="https://github.com/alamehan/nice-list">✨ NiceList ✨</a>
+      <a class="navbar-text text-light text-decoration-none" href="https://alamehan.github.io/links">🤖 Kawsar &nbsp;<i class="bi bi-arrow-right-circle"></i></a>
+    </div>
+  </nav>
+
+  <div class="container" id="atas">
+    <!-- TABS -->
+    <div class="row" style="margin-top: 56px;">
+      <div class="col">
+        <ul class="nav nav-pills nav-fill mt-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-1-tab" data-bs-target="#pills-1" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-1" aria-selected="true">
+              <i class="bi bi-newspaper"></i> Daily Check
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-2-tab" data-bs-target="#pills-2" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-2" aria-selected="false">
+              <i class="bi bi-globe"></i> Top Website
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-3-tab" data-bs-target="#pills-3" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-3" aria-selected="false">
+              <i class="bi bi-youtube"></i> Top Youtube
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-4-tab" data-bs-target="#pills-4" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-4" aria-selected="false">
+              <i class="bi bi-easel"></i> Top Course
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-5-tab" data-bs-target="#pills-5" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-5" aria-selected="false">
+              <i class="bi bi-book"></i> Best Book
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-6-tab" data-bs-target="#pills-6" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-6" aria-selected="false">
+              <i class="bi bi-gear"></i> Extensions
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-7-tab" data-bs-target="#pills-7" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-7" aria-selected="false">
+              <i class="bi bi-window-sidebar"></i> Software
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-8-tab" data-bs-target="#pills-8" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-8" aria-selected="false">
+              <i class="bi bi-gem"></i> Life Advice
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="row">
+      <div class="col">
+        <div class="tab-content" id="pills-tabContent">
+          <!-- TAB 1 -->
+          <div class="tab-pane fade" id="pills-1" role="tabpanel" aria-labelledby="pills-1-tab">
+            <div id="tab1"></div>
+          </div>
+          <!-- TAB 2 -->
+          <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-2-tab">
+            <div id="tab2"></div>
+          </div>
+          <!-- TAB 3 -->
+          <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-3-tab">
+            <div id="tab3"></div>
+          </div>
+          <!-- TAB 4 -->
+          <div class="tab-pane fade" id="pills-4" role="tabpanel" aria-labelledby="pills-4-tab">
+            <div id="tab4"></div>
+          </div>
+          <!-- TAB 5 -->
+          <div class="tab-pane fade" id="pills-5" role="tabpanel" aria-labelledby="pills-5-tab">
+            <div id="tab5"></div>
+          </div>
+          <!-- TAB 6 -->
+          <div class="tab-pane fade" id="pills-6" role="tabpanel" aria-labelledby="pills-6-tab">
+            <div id="tab6"></div>
+          </div>
+          <!-- TAB 7 -->
+          <div class="tab-pane fade" id="pills-7" role="tabpanel" aria-labelledby="pills-7-tab">
+            <div id="tab7"></div>
+          </div>
+          <!-- TAB 8 -->
+          <div class="tab-pane fade show active" id="pills-8" role="tabpanel" aria-labelledby="pills-8-tab">
+            <div id="tab8"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3"></div>
+  </div>
+
+  <!-- Bootstrap 5-->
+  <script src="library/js/bootstrap-5.0.2.bundle.min.js"></script>
+  <!-- jQuery (Hanya dipakai untuk jQuery Load & DataTables) -->
+  <script src="library/js/jquery-3.6.0.min.js"></script>
+  <script src="library/js/jquery.dataTables.min.js"></script>
+  <script src="library/js/dataTables.bootstrap5.min.js"></script>
+
+  <script>
+    // Load dengan menggunakan fitur ES6: Fetch
+    // Kekurangan: Tidak bisa untuk kasus Nested
+
+    // Load tab2.html
+    fetch("./pages/tab2.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (body) {
+        document.querySelector("#tab2").innerHTML = body;
+      });
+
+    // Load tab8.html
+    fetch("./pages/tab8.html")
+      .then(function (response) {
+        return response.text();
+      })
+      .then(function (body) {
+        document.querySelector("#tab8").innerHTML = body;
+      });
+
+    // Load dengan menggunakan fitur jQuery: Load
+    // Kelebihan: Bisa digunaan untuk kasus Nested
+
+    // Load tab1.html
+    $(function () {
+      $("#tab1").load("./pages/tab1.html");
+    });
+
+    // Load tab3.html
+    $(function () {
+      $("#tab3").load("./pages/tab3.html");
+    });
+
+    // Load tab4.html
+    $(function () {
+      $("#tab4").load("./pages/tab4.html");
+    });
+
+    // Load tab5.html
+    $(function () {
+      $("#tab5").load("./pages/tab5.html");
+    });
+
+    // Load tab6.html
+    $(function () {
+      $("#tab6").load("./pages/tab6.html");
+    });
+
+    // Load tab7.html
+    $(function () {
+      $("#tab7").load("./pages/tab7.html");
+    });
+  </script>
+</body>
+
+</html>

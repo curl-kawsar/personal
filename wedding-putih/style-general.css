@@ -1,0 +1,124 @@
+/* ---------------------------------- FONTS --------------------------------- */
+
+@font-face {
+  font-family: 'Birds of Paradise';
+  src: url('fonts/birds-of-paradise.ttf');
+}
+
+@font-face {
+  font-family: 'Times New Roman';
+  src: url('fonts/times-new-roman.ttf');
+}
+
+@font-face {
+  font-family: 'Arial Narrow';
+  src: url('fonts/arial-narrow-2.ttf');
+}
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('fonts/samarkan.TTF');
+}
+
+/* --------------------------------- GENERAL -------------------------------- */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: 'Birds of Paradise';
+  font-weight: lighter;
+  font-size: 28px;
+  color: #bb9847;
+
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-size: 18px;
+  color: #bb9847;
+  letter-spacing: 3px;
+
+  text-align: center;
+}
+
+li,
+h3 {
+  font-family: 'Arial Narrow';
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+h4 {
+  font-family: 'Samarkan';
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 1.6;
+
+  text-align: center;
+}
+
+.container-fluid {
+  /* Center Container */
+  margin: auto;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: salmon; */
+}
+
+.unone {
+  user-select: none;
+}
+
+/* ------------------------------- RESPONSIVE ------------------------------- */
+
+/* Sebenarnya cara ini tidak baik, seolah seperti dipaksa zoom */
+/* Catatan : setiap size @media dibawah ini dapat digunakan sebagai
+  acuan responsiveness dalam sebuah proyek website */
+/* Tested on : http://responsivetesttool.com/ */
+
+/* Mobile Breakpoint 991px ➜ 991x568 px */
+@media (max-width: 568px) {
+  body {
+    /* zoom: 100%; */
+  }
+}
+
+/* Mobile Breakpoint 480px ➜ 480x896 px */
+@media (max-width: 480px) {
+  body {
+    /* zoom: 90%; */
+  }
+}
+
+/* Mobile Breakpoint 414px ➜ 414x896 px */
+@media (max-width: 414px) {
+  body {
+    /* zoom: 80%; */
+  }
+}
+
+/* Mobile Breakpoint iPhone 6/6s/7 ➜ 375x667 px */
+@media (max-width: 375px) {
+  body {
+    /* zoom: 70%; */
+  }
+}
+
+/* Mobile Breakpoint 768px ➜ 768x360 px */
+@media (max-width: 360px) {
+  body {
+    /* zoom: 67%; */
+  }
+}

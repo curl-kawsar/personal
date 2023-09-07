@@ -1,0 +1,125 @@
+/* --------------------------------- CATATAN -------------------------------- */
+
+/* All responsive modes are tested on : http://responsivetesttool.com/ */
+
+/* ------------------------------- ABOUT TEXT ------------------------------- */
+
+html {
+  /* Smooth Scroll */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Hidden Overflow */
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 960px;
+  /* margin: auto; */
+  /* padding: 0 30px; */
+}
+
+.unone {
+  user-select: none;
+}
+
+.separator::before {
+  margin-right: .25em;
+}
+
+.separator::after {
+  margin-left: .25em;
+}
+
+.profile {
+  width: 160px;
+  border-radius: 100%;
+}
+
+/* ------------------------------- SWEET ALERT ------------------------------ */
+
+.popup-project {
+  /* Sesuaikan dengan size bg-image */
+  width: 429px;
+  height: 550px;
+  border-radius: 12px;
+}
+
+.confirm-button-project {
+  height: 64px;
+  padding: 0px 24px 0px 24px;
+  border-radius: 12px !important;
+
+  margin-top: 260px !important;
+}
+
+.cancel-button-project {
+  /* Font style disamakan dengan style <a> */
+  font-weight: 400 !important;
+  font-size: 24px !important;
+
+  height: 64px;
+  padding: 0px 24px 0px 24px;
+  border-radius: 12px !important;
+
+  margin-top: 260px !important;
+}
+
+.confirm-button-noproject {
+  height: 64px;
+  padding: 0px 24px 0px 24px;
+  border-radius: 12px !important;
+}
+
+.cancel-button-noproject {
+  /* Font style disamakan dengan style <a> */
+  font-weight: 400 !important;
+  font-size: 24px !important;
+
+  height: 64px;
+  padding: 0px 24px 0px 24px;
+  border-radius: 12px !important;
+}
+
+/* ------------------------------- RESPONSIVE ------------------------------- */
+
+/* Sebenarnya cara ini tidak baik, seolah seperti dipaksa zoom */
+/* Catatan : setiap size @media dibawah ini dapat digunakan sebagai
+  acuan responsiveness dalam sebuah proyek website */
+/* Tested on : http://responsivetesttool.com/ */
+
+/* Mobile Breakpoint 991px ➜ 991x568 px */
+@media (max-width: 568px) {
+  body {
+    zoom: 100%;
+  }
+}
+
+/* Mobile Breakpoint 480px ➜ 480x896 px */
+@media (max-width: 480px) {
+  body {
+    zoom: 90%;
+  }
+}
+
+/* Mobile Breakpoint 414px ➜ 414x896 px */
+@media (max-width: 414px) {
+  body {
+    zoom: 80%;
+  }
+}
+
+/* Mobile Breakpoint iPhone 6/6s/7 ➜ 375x667 px */
+@media (max-width: 375px) {
+  body {
+    zoom: 70%;
+  }
+}
+
+/* Mobile Breakpoint 768px ➜ 768x360 px */
+@media (max-width: 360px) {
+  body {
+    zoom: 67%;
+  }
+}

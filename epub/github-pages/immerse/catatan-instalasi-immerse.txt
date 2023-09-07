@@ -1,0 +1,69 @@
+===========================
+Catatan Instalasi Immerse :
+===========================
+---------------------------------------------------
+A. Download dan install Git, Node JS & Yarn terbaru
+---------------------------------------------------
+
+https://git-scm.com/
+https://nodejs.org/en/
+https://classic.yarnpkg.com/en/docs/install/
+
+------------------------
+B. Clone & Build Project
+------------------------
+
+$ git clone https://github.com/kylqin/immerse
+$ cd immerse-master
+$ yarn				(Instalasi Package)
+$ yarn start			(Run Project)
+$ yarn build			(Compile Project)
+
+------------------
+C. Catatan Penting
+------------------
+
+>>> SOLUSI STEP 1
+
+Saat Run Project, tampak baik-baik saja, tidak ada permasalahan. Namun saat Compile Project, dan kita
+mencoba membuka project melalui "dis/immerse/index.html", entah kenapa yang tampil di browser hanya
+halaman kosong (blank page), berbeda halnya dengan Koodo Reader yang mana saat project sudah di compile,
+project langsung bisa diakses melalui index.html. Karenanya sebagai solusi, baca tulisan di link berikut:
+
+https://www.reddit.com/r/angular/comments/8qkm1w/ng_build_just_a_white_page_like_its_not_loading/e0k1yji/
+
+Intinya buka "dis/immerse" melalui Visual Studio Code, download extension bernama "Live Server", kemudian
+jalankan project dengan Live Server. Maka hasilnya project akan tampil seperti pada saat Run Project.
+
+>>> SOLUSI STEP 2
+
+Baca problem & solution berikut ini:
+- https://stackoverflow.com/questions/54143002/run-angular-7-project-locally-on-file-without-server
+- https://stackoverflow.com/questions/40024147/run-angular2-as-static-app-in-browser-without-a-server
+
+Intinya, Angular butuh Server untuk menjalankan projectnya, meskipun sudah di build, tetap tidak bisa
+langsung mengakses project dengan membuka index.html, melainkan menjalankan project dengan server. Namun
+ada berbagai solusi yang bisa dipakai agar project angular bisa berjalan secara lokal (tanpa server),
+sayangnya hasilnya tidak stabil, terkadang beberapa fungsi dalam project malah tidak berjalan, dsb.
+
+Oleh karena itu sebagai solusi, hosting saja project Angular nya di web penyedia jasa backend gratis,
+misalnya Firebase. Untuk tutorialnya bisa buka di link berikut :
+https://www.codepolitan.com/web-static-dengan-firebase-hosting-58b36787c3f00 (Baca aja sedikit)
+https://console.firebase.google.com/ (Buka console -> Buat Project -> Dst gampang kok)
+
+-----------------------------------------
+D. Modifikasi Bahasa Menjadi Full English
+-----------------------------------------
+
+1) Buka main-es5.js, scroll ke baris 522, anda akan menemukan Unicode "\u9605\u8BFB\u8BBE\u7F6E" dari mulai
+   baris ini hingga beberapa baris diatas/bawahnya. Jika Unicode tersebut di Convert kedalam text melalui:
+   https://www.chineseconverter.com/en/convert/unicode, maka hasilnya berupa text China (yang mana secara
+   default memang beberapa menu di dalam project berbahasa China). 
+
+2) Oleh karena itu lakukan covert secara satu-per-satu setiap Unicode yang ada, buka Google Translate,
+   translate kedalam Bahasa inggris lalu timpa Unicode tadi dengan hasil translate Text berbahasa inggris.
+   Misalnya Unicode tadi "\u9605\u8BFB\u8BBE\u7F6E", saat di convert menjadi text "缩放比例", lalu saat di
+   translate via Google Translate, hasilnya "scaling ratio". Maka timpa "\u9605\u8BFB\u8BBE\u7F6E" dengan
+   "Scaling Ratio".
+
+3) Lakukan hal yang sama ke seluruh Unicode China di file "main-es5.js" dan "main-es2015.js"

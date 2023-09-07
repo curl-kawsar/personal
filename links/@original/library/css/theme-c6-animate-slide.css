@@ -1,0 +1,162 @@
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #468EEF !important;
+
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2)
+}
+
+h1 {
+  font-family: 'Karla', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  color: #F7F9F9;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 24px;
+  color: #ECECEC;
+}
+
+a {
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 24px !important;
+  color: #F9F9F9 !important;
+}
+
+hr {
+  background-color: gray;
+  border-radius: 12px;
+  height: 1px;
+}
+
+.separator {
+  color: #E1F5FE;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  /* border-bottom: 2px solid #000; */
+}
+
+.popup-noproject {
+  width: 360px !important;
+  border-radius: 12px;
+  background-color: #468EEF !important;
+}
+
+.btn-back {
+  position: fixed;
+  z-index: 100;
+  left: 6%;
+  top: 3%;
+
+  border: 0px solid;
+  border-radius: 100px;
+  padding: 0px;
+
+  background-color: transparent;
+}
+
+.banner-contoh {
+  position: fixed;
+  z-index: 100;
+  top: 0%;
+  right: 0%;
+}
+
+.btn-back {
+  position: fixed;
+  z-index: 100;
+  left: 6%;
+  top: 3%;
+
+  border: 0px solid;
+  border-radius: 100px;
+  padding: 0px;
+
+  background-color: transparent;
+}
+
+.banner-contoh {
+  position: fixed;
+  z-index: 100;
+  top: 0%;
+  right: 0%;
+}
+
+.blok-premium {
+  display: inline-block;
+
+  /* Untuk Check Efek inline-block */
+  /* background-color: red; */
+}
+
+.lencana-premium {
+  display: block;
+  position: absolute;
+  width: 36px;
+
+  /* Posisi Kiri Atas */
+  margin-top: -160px;
+  margin-left: 170px;
+
+  /* Posisi Tengah */
+  /* margin-top: -32px; */
+  /* margin-left: 116px; */
+}
+
+/* ============================== ANIMATION ==============================*/
+/* REF: https://codepen.io/chris22smith/pen/RZogMa */
+
+.bg {
+  animation: slide 10s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #56CCF2 50%, #2F80ED 50%);
+  bottom: 0;
+  left: -50%;
+  opacity: .5;
+  position: fixed;
+  right: -50%;
+  top: 0;
+  z-index: -1;
+}
+
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
+}
+
+.bg3 {
+  animation-duration: 11s;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, .8);
+  border-radius: .25em;
+  box-shadow: 0 0 .25em rgba(0, 0, 0, .25);
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(25%);
+  }
+}

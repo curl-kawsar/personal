@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Launch ...</title>
+    <style type="text/css">
+      html,
+      body,
+      .launch-box {
+        height: 100%;
+        overflow: hidden;
+      }
+      * {
+        margin: 0;
+      }
+      .shadow-box {
+        margin: 10px;
+        height: calc(100% - 20px);
+        background-color: white;
+        box-shadow: 0 0 10px rgba(75, 75, 75, 0.2);
+        overflow: hidden;
+        position: relative;
+      }
+      .logo {
+        width: 180px;
+        margin: 10px;
+      }
+      .writer {
+        width: 240px;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+      .words {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 17px;
+        color: #878787;
+        width: 250px;
+        margin: 40px 20px;
+      }
+      .launching {
+        font-size: 19px;
+        font-weight: bold;
+        line-height: 32px;
+        color: #000000;
+        margin-left: 10px;
+        margin-bottom: 5px;
+      }
+      .progress-container {
+        position: absolute;
+        bottom: 20px;
+        left: 0px;
+      }
+      .progress {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 29px;
+        color: #878787;
+        opacity: 1;
+        float: right;
+        margin-bottom: 5px;
+      }
+      .progress-bar {
+        width: 255px;
+        height: 0px;
+        border-bottom: 4px solid #eaeaea;
+        opacity: 1;
+      }
+      .progress-line {
+        width: 172px;
+        height: 0px;
+        border-bottom: 4px solid #000000;
+        opacity: 1;
+        position: relative;
+        bottom: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="launch-box">
+      <div class="shadow-box">
+        <img src="splash.png" alt="" class="logo" />
+        <p class="words"></p>
+        <div class="progress-container">
+          <span class="launching">Memulai</span>
+          <span class="progress"></span>
+          <div class="progress-bar"></div>
+          <div class="progress-line"></div>
+        </div>
+        <img src="writer.jpg" alt="" class="writer" />
+      </div>
+    </div>
+    <script>
+      let words = [
+        "Emosi kesedihan adalah wajah yang melihatnya dari dua sisi, satu menghadapi teror dan yang lain menghadapi rasa kasihan, dan keduanya hanyalah dua tahap yang berbeda.",
+        "Saya telah berusaha keras untuk mencintai Tuhan. Dia akhirnya berkata. Tapi sekarang sepertinya saya gagal. Sulit untuk melakukannya. Saya mencoba menggabungkan keinginan saya sendiri dengan kehendak Tuhan sedikit demi sedikit, dan itu tidak sepenuhnya tidak mungkin. Mungkin saya akan terus melakukannya.",
+        "Saya hampir tidak memiliki kesabaran untuk hidup serius, karena kehidupan yang serius ini antara saya dan keinginan saya, bagi saya sepertinya permainan anak-anak, permainan anak yang jelek dan monoton.",
+        "Aku tidak mengatakan apa-apa padanya kecuali beberapa kata sopan setiap hari, tapi namanya seperti panggilan, yang akan memobilisasi darahku untuk meletuskan hasrat bodoh.",
+      ];
+      let number = Math.floor(Math.random() * words.length);
+      let word = words[number];
+      document.querySelector(".words").innerHTML = word;
+      let progressNum = document.querySelector(".progress");
+      let progressLine = document.querySelector(".progress-line");
+      let progress = 0;
+      let timer = setInterval(() => {
+        progress++;
+        progressNum.innerHTML = progress + "%";
+        progressLine.style.width = (255 * progress) / 100 + "px";
+        if (progress > 99) {
+          clearInterval(timer);
+        }
+      }, 20);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+html {
+  /* Smooth Scroll */
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Hidden Overflow */
+  overflow-x: hidden;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #101117;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #F9F9F9;
+  font-weight: 900;
+  font-size: 4.5em;
+}
+
+.t1 {
+  margin-top: 32px;
+  margin-right: 40px;
+}
+
+.t2 {
+  margin-top: -28px;
+  margin-left: 30px;
+}
+
+.dot {
+  color: #F5D34C;
+}
+
+h6 {
+  margin-top: 8px;
+  color: #F9F9F9;
+  font-weight: 500;
+  font-size: 1.25em;
+}
+
+.bungkus {
+  margin-top: 28px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.k1,
+.k2,
+.k3,
+.k4 {
+  margin: 12px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  user-select: none;
+  transition: all .1s ease-in;
+}
+
+.k1 img,
+.k2 img,
+.k3 img,
+.k4 img {
+  user-select: none;
+  margin-top: 23px;
+}
+
+.k1:hover::after,
+.k2:hover::after,
+.k3:hover::after,
+.k4:hover::after {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #F9F9F9;
+}
+
+.ukuran-svg {
+  width: 95px;
+  height: 95px;
+}
+
+/* ========== K1 ========== */
+
+.k1 {
+  border: 3px solid #1C3260;
+}
+
+.k1:hover {
+  border: 6px solid #ADD8E6;
+  background-color: #1C3260;
+}
+
+.k1:hover::after {
+  content: "CSS Layouting";
+}
+
+/* ========== K2 ========== */
+
+.k2 {
+  border: 3px solid #32601C;
+}
+
+.k2:hover {
+  border: 6px solid #D8E6AD;
+  background-color: #32601C;
+}
+
+.k2:hover::after {
+  content: "CSS Flexbox";
+}
+
+/* ========== K3 ========== */
+
+.k3 {
+  border: 3px solid #601C32;
+}
+
+.k3:hover {
+  border: 6px solid #E6ADD8;
+  background-color: #601C32;
+}
+
+.k3:hover::after {
+  content: "CSS Grid";
+}
+
+/* ========== K4 ========== */
+
+.k4 {
+  border: 3px solid #616117;
+}
+
+.k4:hover {
+  border: 6px solid #E0E07D;
+  background-color: #616117;
+}
+
+.k4:hover::after {
+  content: "JavaScript";
+}
+
+/* RESPONSIVE */
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  html {
+    zoom: 80%;
+  }
+
+  .k1:hover::after {
+    content: "";
+  }
+
+  .k2:hover::after {
+    content: "";
+  }
+
+  .k3:hover::after {
+    content: "";
+  }
+
+  .k4:hover::after {
+    content: "";
+  }
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {}
+
+/* XX-Large devices (larger desktops)
+No media query since the xxl breakpoint has no upper bound on its wid */

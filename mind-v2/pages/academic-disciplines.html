@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATOZ Mind: Academic Disciplines</title>
+  <link rel="icon" href="../assets/logo-atoz-mind.svg">
+  <link rel="stylesheet" href="../library/fonts-google-apis.css">
+  <link rel="stylesheet" href="../library/quasar-2.7.1.min.css">
+  <style>
+    /* BUTTON TO TOP */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .btn-scroll {
+      z-index: 1000;
+      /* Perfect Fixed Center Position */
+      position: fixed;
+      bottom: 15%;
+      right: -16px;
+      /* Wajib Tambahkan Transform */
+      /* transform: translate(-50%, 0%); */
+      border: 0px solid;
+      padding: 0px;
+      background-color: transparent;
+      transition: 0.3s;
+    }
+
+    /* Hover saat buka di computer Active (click) saat buka di mobile */
+    .btn-scroll:hover,
+    .btn-scroll:active {
+      right: 0px;
+    }
+
+    .btn-scroll:hover .ganti-warna,
+    .btn-scroll:active .ganti-warna {
+      filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(175deg) brightness(97%) contrast(103%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- BUTTON TO TOP (HANYA UNTUK @example-basic) -->
+  <div id="atas"></div>
+  <button class="btn-scroll">
+    <a href="#atas"><img src="../assets/to-top.svg" class="ganti-warna"></a>
+  </button>
+
+  <div id="q-app" style="min-height: 100vh;">
+    <div class="q-pa-md">
+
+      <!-- A. FILTER -->
+      <q-input ref="filterRef" filled v-model="filter" label="Search here" class="q-mb-md">
+        <template v-slot:append>
+          <q-icon v-if="filter !== ''" name="clear" class="cursor-pointer" @click="resetFilter"></q-icon>
+        </template>
+      </q-input>
+
+      <!-- B. ALERT -->
+      <q-banner inline-actions rounded class="bg-primary text-white">
+        Resource: <a href="https://en.wikipedia.org/wiki/Outline_of_academic_disciplines" style="color: white;">Outline of Academic Disciplines</a> | Latest Wikipedia's revision: 22:49, 28 May 2022
+      </q-banner>
+
+      <!-- C. BUTTON -->
+      <div class="q-gutter-sm q-mt-sm q-mb-md">
+        <q-btn outline color="primary" label="Expand All" icon-right="open_in_full" @click="$refs.tree.expandAll()"></q-btn>
+        <q-btn outline color="primary" label="Collapse All" icon-right="close_fullscreen" @click="$refs.tree.collapseAll()"></q-btn>
+        <q-btn outline color="primary" label="Reset" icon-right="refresh" @click="defaultNode($refs)"></q-btn>
+        <!-- <q-btn outline color="primary" label="Toggle" icon-right="toggle_on" @click="toggleNode($refs)"></q-btn> -->
+        <q-btn outline color="primary" label="Home" icon-right="home" href="../index.html"></q-btn>
+      </div>
+
+      <!-- D. CONTENT -->
+      <q-tree :nodes="simple" node-key="label" ref="tree" selected-color="green" v-model:selected="selected" v-model:expanded="expanded" :filter="filter" dense :default-expand-all="false"></q-tree>
+
+    </div>
+  </div>
+
+  <script src="../library/vue-3.global.prod.js"></script>
+  <script src="../library/quasar-2.7.1.umd.prod.js"></script>
+  <script src="../script/academic-disciplines.js"></script>
+</body>
+
+</html>

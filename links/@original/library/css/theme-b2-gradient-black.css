@@ -1,0 +1,77 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+
+  /* GRADIENT EDITION */
+  /* SUMBER: https://cssgradient.io/gradient-backgrounds/ */
+  background-image: radial-gradient(circle farthest-corner at 50.3% 44.5%, rgba(116, 147, 179, 1) 0%, rgba(62, 83, 104, 1) 100.2%) !important;
+
+  text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  color: #F9F9F9;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 24px;
+  color: #ECECEC;
+}
+
+a {
+  font-style: normal;
+  font-weight: 400 !important;
+  font-size: 24px !important;
+  color: #F9F9F9 !important;
+}
+
+hr {
+  background-color: gray;
+  border-radius: 12px;
+  height: 1px;
+}
+
+.separator {
+  color: #ECECEC;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 24px;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  /* border-bottom: 2px solid #000; */
+}
+
+.popup-noproject {
+  width: 360px !important;
+  border-radius: 12px;
+  background-image: radial-gradient(circle farthest-corner at 50.3% 44.5%, rgba(116, 147, 179, 1) 0%, rgba(62, 83, 104, 1) 100.2%) !important;
+}
+
+.btn-back {
+  position: fixed;
+  z-index: 100;
+  left: 6%;
+  top: 3%;
+
+  border: 0px solid;
+  border-radius: 100px;
+  padding: 0px;
+
+  background-color: transparent;
+}
+
+.banner-contoh {
+  position: fixed;
+  z-index: 100;
+  top: 0%;
+  right: 0%;
+}

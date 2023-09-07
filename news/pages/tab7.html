@@ -1,0 +1,72 @@
+<body>
+  <!-- TABS | SOFTWARE -->
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-pills nav-fill mt-3" id="pills-tab-software" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-1-tab-software" data-bs-target="#pills-1-software" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-1-software" aria-selected="true">
+            <i class="bi bi-tags"></i> Main Category
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-2-tab-software" data-bs-target="#pills-2-software" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-2-software" aria-selected="false">
+            <i class="bi bi-laptop"></i> Developer Pack
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-3-tab-software" data-bs-target="#pills-3-software" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-3-software" aria-selected="false">
+            <i class="bi bi-archive"></i> Miscellaneous
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ALERT | SOFTWARE -->
+  <div class="mt-4"></div>
+
+  <div class="text-center alert alert-success" role="alert">
+    <b>Latest Update: May 2021</b>
+  </div>
+
+  <div style="margin-bottom: -16px"></div>
+
+  <!-- CONTENT | SOFTWARE -->
+  <div class="row">
+    <div class="col">
+      <div class="tab-content" id="pills-tabContent">
+        <!-- TAB 1 -->
+        <div class="tab-pane fade show active" id="pills-1-software" role="tabpanel" aria-labelledby="pills-1-tab-software">
+          <div id="tab1-software"></div>
+        </div>
+        <!-- TAB 2 -->
+        <div class="tab-pane fade" id="pills-2-software" role="tabpanel" aria-labelledby="pills-2-tab-software">
+          <div id="tab2-software"></div>
+        </div>
+        <!-- TAB 3 -->
+        <div class="tab-pane fade" id="pills-3-software" role="tabpanel" aria-labelledby="pills-3-tab-software">
+          <div id="tab3-software"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../library/js/jquery-3.6.0.min.js"></script>
+
+  <script>
+    // Load tab1-software.html
+    $(function () {
+      $("#tab1-software").load("./pages/sub-software/tab1-software.html");
+    });
+
+    // Load tab2-software.html
+    $(function () {
+      $("#tab2-software").load("./pages/sub-software/tab2-software.html");
+    });
+
+    // Load tab2-software.html
+    $(function () {
+      $("#tab3-software").load("./pages/sub-software/tab3-software.html");
+    });
+  </script>
+</body>

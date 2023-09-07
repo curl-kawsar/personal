@@ -1,0 +1,22 @@
+CATATAN PENTING:
+
+- Jika node tidak muncul, kemungkinan besar karena ada node yang berlabel/nama sama persis.
+- Misalnya terdapat 2 node yang berlabel/nama "Root", ini tidak diizinkan oleh Quasar Framework.
+- Solusinya rename node tersebut menjadi "Root ➀" dan "Root ➁", intinya berikan penanda unik.
+
+JIKA LIST NODE TERLANJUR BANYAK YANG SAMA:
+
+- Copy & paste seluruh data node (json/JS object) ke file terpisah
+- Pastikan hapus seluruh indent (gunakan CTRL+A lalu CTRL+[)
+- Pastikan seluruh data bersih dari format, menyisakan text saja per barisnya (gunakan RegEx)
+- Why? karena di web checker nantinya akan memeriksa baris/line yang sama persis
+- Copy & paste ke web checker: https://www.somacon.com/p568.php
+- Analisis bagian data yang terduplikat (misal terdapat 2 kalimat "User Root")
+- Kembali ke data asli, gunakan CTRL+H untuk mencari bagian data terduplikat tadi
+- Berikan nomor unik pada setiap data tersebut (misal jadi "User Root ➀" dan "User Root ➁")
+- Gunakan nomor unik berikut: ➀, ➁, ➂, ➃, ➄, ➅, ➆, ➇, ➈, ➉
+
+USEFUL:
+
+- Pilih multiple line yang diperlukan
+- Notepad++ How To Insert Incrementing Numbers (https://www.youtube.com/watch?v=_4PQ1ZLxYk0)

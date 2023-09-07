@@ -1,0 +1,78 @@
+=========================================================================
+PERTAMA-TAMA PAHAMI PARADIGMA BERIKUT (KASUS BERBASIS NPM)
+=========================================================================
+
+Pertama-tama buka github.com, di menu search masukkan keyword dari
+project yang ingin dicari, misalnya "epub reader", lalu Sort hasilnya
+berdasarkan "Recently Updated" atau "Most Stars" agar ditampilkan
+hanya project yang terbaru dan populer saja, kemudian pilih project
+yang ingin di-cloning, pelajari sepintas dokumentasinya.
+
+1. Baca dokumentasi dari project yang akan di-clone (simple/npm/yarn?)
+2. Lakukan cloning dengan perintah "$ git clone <link>"
+3. Periksa "package.json", pelajari paket yang diperlukan dan versinya
+4. Lakukan instalasi paket "Buka cmder > folder project > $ npm install"
+5. Jalankan/test project dengan perintah "$ npm run serve/dev"
+6. Buka di browser dengan alamat http://localhost:8080/ (sesuaikan)
+7. Modifikasi project sesuai kebutuhan anda, setelah final masuk step 8
+8. Complie project dengan perintah "$ npm run build --report"
+9. Sekarang project sudah jadi, siap di upload, periksa index.html-nya
+
+Catatan untuk project berbasis Yarn :
+
+Jika didalam folder project ada file "karma.conf.js", folder "e2e"
+dan beberapa code ditulis dalam TypeScript, maka project tersebut
+menggunakan Angular, karenanya tidak menggunapan $ npm install, tapi
+$ yarn (untuk instalasi paket) dan $ yarn start (untuk run project)
+serta $ yarn build (untuk compile project final)
+
+=========================================================================
+TUTORIAL CLONE & COMPILE OPEN SOURCE PROJECT DARI GITHUB BASIS NPM
+=========================================================================
+
+1. $ git clone <link>
+   $ cd <folder_project>
+
+2. Uninstall Node JS kamu (cara lebih aman)
+   Download & Install Node JS sesuai versi project
+   Atau download versi Node JS terbaru saja
+
+3. $ node -v
+   $ npm -v
+
+4. $ npm config get registry
+   $ npm config rm proxy
+   $ npm config rm https-proxy
+
+5. $ npm install -g @vue/cli
+   $ npm install -g @angular/cli
+   $ npm install -g node-sass
+
+6. Buka CMDER
+   Arahkan ke Folder Project
+   $ npm cache clean
+   $ npm install
+   $ npm run serve
+   $ npm run build
+
+=========================================================================
+KASUS ERROR NPM YANG PALING UMUM TERJADI
+=========================================================================
+
+1. Jika npm stuck, coba tekan "enter" di keyboard, maka proses berlanjut,
+   tapi hati-hati biasanya terjadi karena KONEKSI INTERNET LAMBAT,
+   solusinya coba beralih ke koneksi internet yang cepat
+2. Banyak permasalah akibat version package di "package.json", solusinya
+   sesuaikan versi package dengan yang dibutuhkan (lakukan riset) atau
+   biarkan kosong (auto mengambil versi terbaru dari package tersebut)
+3. Jika terjadi permasalahan HTTPS maka lakukan langkah berikut:
+   $ npm config set registry http://registry.npmjs.org/
+   $ npm install --> dan seterusnya hingga selesai ...
+   $ npm config set registry https://registry.npmjs.org/
+
+=========================================================================
+CONTOH BEBERAPA PROJECT DENGAN PANDUAN INSTALASI (BELAJAR DARI SINI)
+=========================================================================
+
+1. koodo-reader : buka catatannya di "catatan-instalasi-koodo.txt"
+2. immerse	: buka catatannya di "catatan-instalasi-immerse.txt"

@@ -1,0 +1,63 @@
+<body>
+  <!-- TABS | DAILY -->
+  <div class="row">
+    <div class="col">
+      <ul class="nav nav-pills nav-fill mt-3" id="pills-tab-daily" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-1-tab-daily" data-bs-target="#pills-1-daily" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-1-daily" aria-selected="false">
+            <i class="bi bi-bell"></i> Latest News
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-2-tab-daily" data-bs-target="#pills-2-daily" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-2-daily" aria-selected="true">
+            <i class="bi bi-cloud-arrow-down"></i> Latest Resources
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-3-tab-daily" data-bs-target="#pills-3-daily" data-bs-toggle="pill" type="button" role="tab" aria-controls="pills-3-daily" aria-selected="false">
+            <i class="bi bi-building"></i> Find a Job
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CONTENT | DAILY -->
+  <div class="row">
+    <div class="col">
+      <div class="tab-content" id="pills-tabContent">
+        <!-- TAB 1 -->
+        <div class="tab-pane fade show active" id="pills-1-daily" role="tabpanel" aria-labelledby="pills-1-tab-daily">
+          <div id="tab1-daily"></div>
+        </div>
+        <!-- TAB 2 -->
+        <div class="tab-pane fade" id="pills-2-daily" role="tabpanel" aria-labelledby="pills-2-tab-daily">
+          <div id="tab2-daily"></div>
+        </div>
+        <!-- TAB 3 -->
+        <div class="tab-pane fade" id="pills-3-daily" role="tabpanel" aria-labelledby="pills-3-tab-daily">
+          <div id="tab3-daily"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../library/js/jquery-3.6.0.min.js"></script>
+
+  <script>
+    // Load tab1-daily.html
+    $(function () {
+      $("#tab1-daily").load("./pages/sub-daily/tab1-daily.html");
+    });
+
+    // Load tab2-daily.html
+    $(function () {
+      $("#tab2-daily").load("./pages/sub-daily/tab2-daily.html");
+    });
+
+    // Load tab3-daily.html
+    $(function () {
+      $("#tab3-daily").load("./pages/sub-daily/tab3-daily.html");
+    });
+  </script>
+</body>

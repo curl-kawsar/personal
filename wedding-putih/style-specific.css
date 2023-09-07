@@ -1,0 +1,658 @@
+/* --- All responsive modes are tested on : http://responsivetesttool.com/ -- */
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 1                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-a {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-a1 {
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .banner */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-a2 {
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* Logo Center */
+  text-align: center;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: green; */
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-a1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-responsive-a2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+}
+
+.img-responsive-a3 {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  top: 8%;
+}
+
+.img-responsive-a4 {
+  width: 25%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 8%;
+}
+
+.banner {
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  background-color: #FFFFFF;
+
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-a {
+    padding-bottom: 56px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-a1 {
+    width: 100%;
+  }
+
+  /* Lebar 100% */
+  .flex-items-a2 {
+    width: 100%;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 2                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-b {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-b1 {
+  order: 1;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-b2 {
+  order: 2;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive-c */
+  position: relative;
+
+  /* Center Text */
+  text-align: center;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: green; */
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-b1 {
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+
+  box-sizing: border-box;
+  border: 2.5px #bb9847 solid;
+  border-radius: 999px;
+  padding: 6px;
+}
+
+.img-responsive-b2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-responsive-b3 {
+  width: 12%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  left: 0;
+}
+
+.img-responsive-b4 {
+  width: 12%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  right: 0;
+}
+
+.img-border::before {
+  content: "";
+
+  display: block;
+  position: absolute;
+  z-index: 10;
+
+  box-sizing: border-box;
+  border: 3.5px #bb9847 solid;
+  width: 94%;
+  height: 100%;
+
+  margin-left: 16px;
+  margin-top: -18px;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-b {
+    padding-bottom: 40px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-b1 {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Lebar 100% */
+  .flex-items-b2 {
+    order: 1;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+
+  .img-responsive-b3 {
+    width: 14%;
+    top: 0;
+  }
+
+  .img-responsive-b4 {
+    width: 14%;
+    bottom: 0;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 3                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-c {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-c1 {
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-c2 {
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive-c */
+  position: relative;
+
+  /* Center Text */
+  text-align: center;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: green; */
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-c1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.btn-lokasi {
+  font-family: 'Arial Narrow';
+  font-weight: bold;
+  font-size: 14px;
+
+  display: block;
+  margin: auto;
+  width: 120px;
+  height: 32px;
+  padding-top: 13px;
+  margin-top: 24px;
+
+  color: #bb9847;
+  border: 2px solid #bb9847;
+
+  /* Efek Animasi */
+  transition: 0.2s;
+}
+
+.btn-lokasi:hover {
+  color: #ffffff;
+  background-color: #bb9847;
+}
+
+/* ----------------------------- COUNTDOWN TIMER ---------------------------- */
+
+.container-countdown {
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: normal;
+  list-style-type: none;
+  padding: 3px;
+
+  background-color: #bb9847;
+}
+
+li span {
+  display: block;
+  font-size: 40px;
+
+  padding: 12px 12px;
+  background-color: #ffffff;
+}
+
+.message {
+  font-size: 24px;
+}
+
+#content {
+  display: none;
+  padding: 8px;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-c {
+    padding-bottom: 0px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-c1 {
+    width: 100%;
+  }
+
+  /* Lebar 100% */
+  .flex-items-c2 {
+    width: 100%;
+    margin-bottom: 64px;
+  }
+
+  .container-countdown {
+    margin-left: -40px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 4                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-d {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-d1 {
+  order: 1;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-d2 {
+  order: 2;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive-c */
+  position: relative;
+
+  /* Center Text */
+  text-align: center;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: green; */
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-d1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-d {
+    padding-bottom: 64px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-d1 {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Lebar 100% */
+  .flex-items-d2 {
+    order: 1;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 5                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-e {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-e1-1 {
+  order: 2;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 25%;
+
+  /* Image Center */
+  text-align: center;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: orange; */
+}
+
+/* Lebar 50% */
+.flex-items-e1-2 {
+  order: 3;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 25%;
+
+  /* Image Center */
+  text-align: center;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-e2 {
+  order: 1;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive-c */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  background-color: #bb9847;
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-e1 {
+  display: inline-block;
+  width: 90%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-responsive-e2 {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-e {
+    padding-bottom: 0px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-e1-1 {
+    order: 1;
+    width: 25%;
+    margin-bottom: 12px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-e1-2 {
+    order: 2;
+    width: 25%;
+    margin-bottom: 12px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-e2 {
+    order: 3;
+    width: 100%;
+    margin-bottom: 64px;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  SECTION 6                                 */
+/* -------------------------------------------------------------------------- */
+
+.flex-container-f {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  align-content: center;
+}
+
+/* Lebar 50% */
+.flex-items-f1 {
+  order: 1;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .banner */
+  position: relative;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: red; */
+}
+
+/* Lebar 50% */
+.flex-items-f2 {
+  order: 2;
+
+  align-self: center;
+  flex-grow: 1;
+  width: 50%;
+
+  /* Parent untuk .img-responsive */
+  position: relative;
+
+  /* Logo Center */
+  text-align: center;
+
+  /* ⚠️For Debugging⚠️ */
+  /* background-color: green; */
+}
+
+/* --------------------------------- CONTENT -------------------------------- */
+
+.img-responsive-f1 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.img-responsive-f2 {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+  position: absolute;
+  z-index: 10;
+  bottom: 0;
+}
+
+.social-media {
+  text-align: center;
+  margin: 40px 0px;
+}
+
+.icon-svg {
+  margin: 0px 12px;
+  width: 40px;
+}
+
+/* -------------------------------- REPONSIVE ------------------------------- */
+
+@media (max-width: 906px) {
+
+  .flex-container-f {
+    padding-bottom: 56px;
+  }
+
+  /* Lebar 100% */
+  .flex-items-f1 {
+    order: 2;
+    width: 100%;
+  }
+
+  /* Lebar 100% */
+  .flex-items-f2 {
+    order: 1;
+    width: 100%;
+  }
+}
